@@ -15,6 +15,8 @@ var (
 )
 
 func init() {
+	go main()
+	time.Sleep(1*time.Millisecond)
 	c, err = NewClient(dsn, time.Millisecond*500)
 	if err != nil {
 		log.Fatal(err)
